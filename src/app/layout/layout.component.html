@@ -1,0 +1,103 @@
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 content-layout" id="main">
+          <app-navbar></app-navbar>
+          <div class="row mb-5">
+            <div class="col-lg-12">
+              <button  (click)="toggleMenu()"  class="burger-button">
+                <span class="burger-bar burger-bar--1"></span>
+                <span class="burger-bar burger-bar--2"></span>
+                <span class="burger-bar burger-bar--3"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="tagline">Dashboard > All Tickets</h3>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-2">
+              <div class="btn-group" dropdown>
+                <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                        aria-controls="dropdown-animated">
+                  Button dropdown <span class="caret"></span>
+                </button>
+                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-animated">
+                  <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Something else
+                    here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <form 
+              class="form-horizontal " 
+              [formGroup]="ticketForm">
+                  <input 
+                      class="form-control"
+                      type="text"
+                      size="16"
+                      formControlName="code_promo"
+                      placeholder="Input Ticket Number">
+                </form>
+            </div>
+            <div class="col-lg-1">
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+            <div class="col-lg-4">
+              <button class="btn btn-danger" type="button">Clear Filter</button>
+            </div>
+
+            <div class="col-lg-2">
+              <span><img src="assets/images/ticket.png" class="img-fluid ticket" alt=""></span><p class="pl-5 pt-3 menu">My Ticket</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-bordered table-striped table-sm">
+                <thead class="thead-default secondary">
+                  <tr >
+                    <th class="text-center">Ticket ID</th>
+                    <th class="text-center">Ticket Name</th>
+                    <th class="text-center">Reporter</th>
+                    <th class="text-center">Created Time</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Activaty</th>
+                    <th class="text-center">Product Stream</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employeeData of employeeDatas">
+                    <td class="text-center text-primary">{{employeeData.Id}}</td>
+                    <td class="text-center">{{employeeData.ticketName}}</td>
+                    <td class="text-center">{{employeeData.reporter}}</td>
+                    <td class="text-center">{{employeeData.createdTime}}</td>
+                    <td class="text-center" *ngIf="employeeData.status == 'yes'">
+                      <span class="dot-active"></span>
+                    </td>
+                    <td class="text-center" *ngIf="employeeData.status == 'no'">
+                      <span class="dot-notactive"></span>
+                    </td>
+                    <td class="text-center" *ngIf="employeeData.status == 'warning'">
+                      <span class="dot-warning"></span>
+                    </td>
+                    <td class="text-center">{{employeeData.activity}}</td>
+                    <td class="text-center">{{employeeData.productStream}}</td>
+                    <td class="text-center"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>    
