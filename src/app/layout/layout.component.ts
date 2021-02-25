@@ -77,7 +77,7 @@ export class LayoutComponent implements OnInit {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
     if(this.menuState == 'in') {
       document.getElementById("mySidenav").style.width = "220px";
-      document.getElementById("main").style.marginLeft = "100px";
+      document.getElementById("main").style.marginLeft = "150px";
     } else {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
