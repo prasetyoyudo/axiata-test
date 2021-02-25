@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import{Router, NavigationEnd} from '@angular/router';
+import { Component, OnInit }      from '@angular/core';
+import { Router, NavigationEnd }  from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,7 @@ export class LoginComponent implements OnInit {
     public Router: Router,
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   login() {
     this.Router.navigate(['/layout'])
