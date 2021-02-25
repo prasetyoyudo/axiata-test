@@ -6,10 +6,10 @@ import { FormBuilder,
   import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css'],
-  animations: [
+  selector    : 'app-layout',
+  templateUrl : './layout.component.html',
+  styleUrls   : ['./layout.component.css'],
+  animations  : [
     trigger('slideInOut', [
       state('in', style({
         transform: 'translate3d(0, 0, 0)'
@@ -24,9 +24,9 @@ import { FormBuilder,
   providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }]
 })
 export class LayoutComponent implements OnInit {
-  menuState:string = 'out';
+  menuState         :string = 'out';
   ticketForm        : FormGroup;
-  employeeDatas  = [{
+  ticketDatas       = [{
     'Id'  : 'ABC123',
     'ticketName' : 'Bronet Axis',
     'reporter'  : 'Ikhsan',
@@ -90,7 +90,7 @@ export class LayoutComponent implements OnInit {
   ) {
 
     this.ticketForm = this.fb.group({
-      'code_promo'  : ['', Validators.compose([Validators.required])],
+      'ticket_name'  : ['', Validators.compose([Validators.required])],
     })
    }
 

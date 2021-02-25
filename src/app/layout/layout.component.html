@@ -55,7 +55,7 @@
                       class="form-control"
                       type="text"
                       size="16"
-                      formControlName="code_promo"
+                      formControlName="ticket_name"
                       placeholder="Input Ticket Number">
                 </form>
             </div>
@@ -87,22 +87,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let employeeData of employeeDatas">
-                    <td class="text-center text-primary">{{employeeData.Id}}</td>
-                    <td class="text-center">{{employeeData.ticketName}}</td>
-                    <td class="text-center">{{employeeData.reporter}}</td>
-                    <td class="text-center">{{employeeData.createdTime}}</td>
-                    <td class="text-center" *ngIf="employeeData.status == 'yes'">
+                  <tr *ngFor="let ticketData of ticketDatas">
+                    <td class="text-center text-primary">{{ticketData.Id}}</td>
+                    <td class="text-center">{{ticketData.ticketName}}</td>
+                    <td class="text-center">{{ticketData.reporter}}</td>
+                    <td class="text-center">{{ticketData.createdTime}}</td>
+                    <td class="text-center" *ngIf="ticketData.status == 'yes'">
                       <span class="dot-active"></span>
                     </td>
-                    <td class="text-center" *ngIf="employeeData.status == 'no'">
+                    <td class="text-center" *ngIf="ticketData.status == 'no'">
                       <span class="dot-notactive"></span>
                     </td>
-                    <td class="text-center" *ngIf="employeeData.status == 'warning'">
+                    <td class="text-center" *ngIf="ticketData.status == 'warning'">
                       <span class="dot-warning"></span>
                     </td>
-                    <td class="text-center">{{employeeData.activity}}</td>
-                    <td class="text-center">{{employeeData.productStream}}</td>
+                    <td class="text-center">{{ticketData.activity}}</td>
+                    <td class="text-center">{{ticketData.productStream}}</td>
                     <td class="text-center"></td>
                   </tr>
                 </tbody>
